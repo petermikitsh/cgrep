@@ -7,6 +7,7 @@ public class TestClass {
 	static private ActorRef[] producer = new ActorRef[2];
 	static private ActorRef consumer;
 	
+	
 	static class Producer extends UntypedActor{
 
 		@Override
