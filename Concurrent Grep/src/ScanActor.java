@@ -25,6 +25,7 @@ public class ScanActor extends UntypedActor{
 			File file = new File(fileName);
 			parseFile(file);
 			Found found = new Found(fileName, matchLines);
+			collector.tell(found);
 		}
 		else
 		{
