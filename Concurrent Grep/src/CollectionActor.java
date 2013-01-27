@@ -1,15 +1,14 @@
 import akka.actor.UntypedActor;
 import static akka.actor.Actors.*;
 
-<<<<<<< HEAD
-public class CollectionActor {
 	
 	
-=======
+
 public class CollectionActor extends UntypedActor{
 	
 	private boolean receiveFileCount;
 	private int numberOfFiles;
+	
 	public CollectionActor(){
 		receiveFileCount = false; 
 	}
@@ -35,5 +34,5 @@ public class CollectionActor extends UntypedActor{
 
 		}
 	}
->>>>>>> 513645acd761bfe4eb30b6d0765c4410ee080be2
+
 }
