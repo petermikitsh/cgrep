@@ -23,9 +23,10 @@ public class CGrep
 				ActorRef stdInputScanActor = makeScanActor();
 				stdInputScanActor.tell(new Configure(null, collector));
 			} else {
+				ActorRef [] scanActor = new ActorRef[args.length];
 				for (int i = 1; i <= args.length; i++) {
-					ActorRef scanActor = makeScanActor();
-					scanActor.tell(new Configure(args[i], collector));
+					scanActor[i] = makeScanActor();
+					scanActor[i].tell(new Configure(args[i], collector));
 				}
 			}
 			
@@ -45,6 +46,7 @@ public class CGrep
 		collectionActor.start();
 		return collectionActor;
 	}
+	
 	
 	private static ActorRef makeScanActor() {
 		ActorRef scanActor = actorOf(
